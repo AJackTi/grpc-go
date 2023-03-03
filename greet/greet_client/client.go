@@ -132,7 +132,7 @@ func doBiDiStreaming(c *greetpb.GreetServiceClient) {
 	// we create a stream by invoking the client
 	stream, err := (*c).GreetEveryone(context.Background())
 	if err != nil {
-		log.Fatal("Error while creating stream: %v\n", err)
+		log.Fatalf("Error while creating stream: %v\n", err)
 	}
 
 	waitc := make(chan struct{})
