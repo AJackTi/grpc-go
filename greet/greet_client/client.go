@@ -96,7 +96,7 @@ func doClientStreaming(c *greetpb.GreetServiceClient) {
 	}
 
 	// we iterate over our slice and send each message individually
-	for _, data := range initDummyData()[:] {
+	for _, data := range initDummyData() {
 		fmt.Printf("Sending req %v\n", data)
 		stream.Send(data)
 		time.Sleep(1000 * time.Millisecond)
